@@ -54,7 +54,7 @@ class OurHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
 def send_to_socket_server(data):
-    host = 'localhost'
+    host = '0.0.0.0'
     port = 5000
 
     try:
@@ -64,7 +64,7 @@ def send_to_socket_server(data):
         logging.error("Can't connect to socket")
 
 def run_socket_server():
-    host = 'localhost'
+    host = '0.0.0.0'
     port = 5000
 
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as server_socket:
@@ -97,7 +97,7 @@ if __name__ == '__main__':
     socket_thread = Thread(target=run_socket_server, daemon=True)
     socket_thread.start()
 
-    with HTTPServer(('', 3000), OurHandler) as server:
+    with HTTPServer(('0.0.0.0', 3000), OurHandler) as server:
         try:
             server.serve_forever()
         except KeyboardInterrupt:
