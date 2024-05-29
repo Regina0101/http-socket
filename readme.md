@@ -1,12 +1,2 @@
-## build image 
-```docker build . --platform=linux/amd64 -t rehina1010/hw4:0.0.1```
-
-## push image to dockerhub
-
-```docker push rehina1010/hw4:0.0.1```
-
-## pull image to server
-```docker pull rehina1010/hw4:0.0.1```
-
-## run container
-```docker run --name Rehina_hw4 -it -v /home/storage:/storage -p 3000:3000 -p 5000:5000 rehina1010/hw4:0.0.1```
+To open the server on your computer you can just do this on the http://localhost:3000/
+Server socket reciving data from POST method which is meanwhile reciving data from client's submitted form. After that socket saving this data in the json file
